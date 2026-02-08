@@ -93,3 +93,77 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Jackelin ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            font-family: sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+        h1 { color: #333; font-size: 24px; }
+        .pregunta { margin: 20px 0; font-weight: bold; }
+        .buttons { height: 50px; position: relative; display: flex; justify-content: space-around; align-items: center; }
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #btnSi { background-color: #000; color: white; z-index: 10; }
+        #btnNo { background-color: #eee; color: #333; position: absolute; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <h1>Hey Jackelin ❤️</h1>
+        <p>Gustavo tiene una pregunta...</p>
+        <div class="pregunta">¿Quieres ser mi San Valentín?</div>
+        <div class="buttons">
+            <button id="btnSi" onclick="aceptar()">Sí ❤️</button>
+            <button id="btnNo" onmouseover="moverBoton(this)" onclick="moverBoton(this)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moverBoton(btn) {
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.position = "fixed";
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+            
+            const frases = ["¿Segura?", "Piénsalo", "Porfa", "Vale...", "Oye.."];
+            btn.innerText = frases[Math.floor(Math.random() * frases.length)];
+        }
+
+        function aceptar() {
+            document.getElementById('mainCard').innerHTML = `
+                <h1>¡SIII! ❤️</h1>
+                <p>Sabía que dirías que sí, Jackelin.</p>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZueXF4ZzR4bmZueXF4ZzR4bmZueXF4ZzR4bmZueXF4ZzR4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/lTQF0ODLLJHzaOBCFy/giphy.gif" style="width:100%">
+            `;
+        }
+    </script>
+</body>
+</html>

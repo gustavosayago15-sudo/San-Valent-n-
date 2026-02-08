@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+            <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -62,19 +62,3 @@
             const y = Math.random() * (window.innerHeight - btn.offsetHeight);
             
             btn.style.position = "fixed";
-            btn.style.left = x + "px";
-            btn.style.top = y + "px";
-            
-            // Cambia el texto del botón al azar para hacerlo más gracioso
-            const frases = ["¿Segura?", "Piénsalo bien", "¡Anda!", "Porfa", "Ni lo intentes"];
-            btn.innerText = frases[Math.floor(Math.random() * frases.length)];
-        }
-
-        function aceptar() {
-            document.getElementById('mensaje').style.display = 'block';
-            document.getElementById('btnNo').style.display = 'none';
-            alert("¡Yeeeiii! Tenemos una cita 🌹");
-        }
-    </script>
-</body>
-</html>
